@@ -60,6 +60,15 @@ class TicTacToe
     return count
   end
   
+  def current_player
+    turn = turn_count
+    if turn % 2 == 0
+      return "X"
+    else
+      return "O"
+    end
+  end
+  
   
   
 end
