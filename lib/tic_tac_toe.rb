@@ -74,6 +74,13 @@ class TicTacToe
       @board[combo[0]] == @board[combo[1]] && @board[combo[1]] == board[combo[2]] && position_taken?(combo[0])}
   end
   
-  
+  def full?
+    final_board = @board.select {|element| element == "X" || element == "O"}
+    if final_board.length == 9
+      return true
+    else
+      return false
+    end
+  end
   
 end
