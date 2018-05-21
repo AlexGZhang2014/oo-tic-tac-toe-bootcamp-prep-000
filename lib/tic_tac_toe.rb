@@ -37,19 +37,27 @@ class TicTacToe
     end
   end
   
-  def turn(board)
+  def turn
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
-    character = current_player(board)
-    if valid_move?(board, index)
-      move(board, index, character)
-      display_board(board)
+    character = current_player
+    if valid_move?(index)
+      move(index, character = "X")
+      display_board
     else
-      turn(board)
+      turn
     end
   end
   
-  
+  def turn_count
+  count = 0
+  board.each do |space|
+    if space == "X" || space == "O"
+      count += 1
+    end
+  end
+  return count
+end
   
 end
